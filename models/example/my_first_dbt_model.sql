@@ -7,18 +7,55 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='table') }}
+-- {{ config(materialized='table') }}
 
-with source_data as (
+-- with source_data as (
 
-    select 1 as id
-    union all
-    select 20 as id
+--     select 1 as id
+--     union all
+--     select 20 as id
 
-)
+-- )
 
-select *
-from source_data
+-- select *
+-- from source_data
+
+
+create or replace TABLE FINAL_EMPLOYEES (
+    ID NUMBER(38,0),
+    FIRST_NAME VARCHAR(256),
+	LAST_NAME VARCHAR(256),
+    FULL_NAME  VARCHAR(256)
+	LOCATION VARCHAR(256),
+	DEPARTMENT VARCHAR(256),
+	EMAIL VARCHAR(256)
+);
+
+INSERT INTO FINAL_EMPLOYEES(
+    ID,
+    FIRST_NAME,
+	LAST_NAME,
+	LOCATION,
+	DEPARTMENT,
+	EMAIL,
+    FULL_NAME
+    )
+SELECT
+    ID,
+    FIRST_NAME,
+	LAST_NAME,
+	LOCATION,
+	DEPARTMENT,
+	EMAIL,
+    CONCAT(FIRST_NAME,LAST_NAME)
+FROM FIVETRAN_DATABASE.GOOGLE_SHEETS.EMPLOYEES;
+
+
+
+
+
+
+    
 
 /*
     Uncomment the line below to remove records with null `id` values
