@@ -13,11 +13,11 @@ models:
 
 
 
-- name: test_tbl
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "This is testing table"
-        tests:
-          - unique
-          - not_null
+  - name: test_tbl
+      description: "A starter dbt model"
+      columns:
+        - name: id
+          description: "This is testing table"
+          tests:
+            - unique
+            - not_null
