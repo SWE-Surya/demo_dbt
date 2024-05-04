@@ -2,7 +2,7 @@
 {{ config(materialized='table') }}
 
 
-with new_source data as (
+with new_source_data as (
   
 SELECT
     ID,
@@ -16,4 +16,4 @@ FROM FIVETRAN_DATABASE.GOOGLE_SHEETS.EMPLOYEES
 
 )
 
-select * from new_source
+select * from new_source_data
