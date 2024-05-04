@@ -40,17 +40,20 @@
 -- 	EMAIL,
 --     FULL_NAME
 --     )
+
+with source_data as (
 SELECT
     ID,
     FIRST_NAME,
 	LAST_NAME,
 	LOCATION,
 	DEPARTMENT,
-	EMAIL,
-    CONCAT(FIRST_NAME,LAST_NAME)
+	EMAIL
 FROM FIVETRAN_DATABASE.GOOGLE_SHEETS.EMPLOYEES
+)
 
-
+select *
+from source_data
 
 
 
