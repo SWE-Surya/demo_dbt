@@ -17,6 +17,8 @@ with source_data as (
 
 )
 
+    insert into source_data values(10);
+
 select *
 from source_data
 
