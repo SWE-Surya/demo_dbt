@@ -41,7 +41,7 @@
 --     FULL_NAME
 --     )
 
-with source_data as (
+
 SELECT
     ID,
     FIRST_NAME,
@@ -51,10 +51,7 @@ SELECT
 	EMAIL,
 	CONCAT(FIRST_NAME,LAST_NAME) AS FULL_NAME
 FROM FIVETRAN_DATABASE.GOOGLE_SHEETS.EMPLOYEES
-)
 
-select *
-from source_data
 
 
 
