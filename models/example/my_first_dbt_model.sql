@@ -13,11 +13,9 @@ with source_data as (
 
     select 1 as id
     union all
-    select null as id
+    select 20 as id
 
 )
-
-    insert into source_data values(10);
 
 select *
 from source_data
