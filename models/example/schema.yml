@@ -13,7 +13,7 @@ models:
 
 
 
-- name: test_tbl.sql
+- name: test_tbl
     description: "A starter dbt model"
     columns:
       - name: id
